@@ -1,9 +1,11 @@
 ---
-- name: RH294 classroom build
+- name: Classroom IdM Setup for Dynamic Inventory
   hosts: all
   gather_facts: no
 
+- import_playbook: create_ipa_server.yml
 - import_playbook: create_ipa_server_hostgroups.yml
-
+- import_playbook: create_client.yml
+- import_playbook: prepare_workstation.yml
 
 ...
