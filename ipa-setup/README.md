@@ -24,3 +24,8 @@ Supplementary drafts
   - delete_ipa_server_hostgroups.yml to reverse that
   - remove_client.yml to unregister a client, not well tested (not sure is
     even the right procedure)
+
+
+== LDAP Modules for python
+
+Need to install python3-ldap on Workstation machine

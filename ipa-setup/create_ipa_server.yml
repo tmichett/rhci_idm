@@ -59,6 +59,11 @@
         state: present
 
     - name: FreeIPA server packages installed
+      dnf:
+        name: '@idm:DL1/dns'
+        state: present        
+
+    - name: FreeIPA server packages installed
       yum:
         name: "{{ ipa_server_packages }}"
         state: present
