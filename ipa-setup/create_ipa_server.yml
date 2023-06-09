@@ -1,6 +1,7 @@
 ---
 # create_ipa_server.yml
 # Steve Bonneville <sbonnevi@redhat.com>
+# Travis Michette <tmichett@redhat.com>
 
 - hosts: utility.lab.example.com
 
@@ -58,10 +59,16 @@
         line: "{{ ansible_default_ipv4.address }} {{ ansible_fqdn }} {{ ansible_hostname }}"
         state: present
 
+## Updated for DO374 course and DO467 (Travis)
+## Using RHEL8 IdM the packages are in the idm:DL1 appstream  
+
     - name: FreeIPA server packages installed
       dnf:
         name: '@idm:DL1/dns'
         state: present        
+
+## Leaving this for other systems and courses that might have RHEL7
+# or versions that don't exist (Travis)
 
     - name: FreeIPA server packages installed
       yum:

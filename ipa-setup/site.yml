@@ -1,0 +1,9 @@
+---
+- name: RH294 classroom build
+  hosts: all
+  gather_facts: no
+
+- import_playbook: create_ipa_server_hostgroups.yml
+
+
+...

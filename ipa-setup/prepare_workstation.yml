@@ -1,0 +1,17 @@
+---
+# prepare_workstation.yml
+# Travis Michette <tmichett@redhat.com>
+
+- name: Installing Python LDAP Packages for Inventory Scripts 
+  hosts: workstation
+
+  vars:
+    python_packages:
+      - python3-ldap
+
+  tasks:
+    - name: Install Python LDAP Modules
+      yum:
+        name: "{{ python_packages }}"
+        state: present
+...
